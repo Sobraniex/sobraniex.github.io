@@ -7,11 +7,11 @@
     new URLSearchParams(location.search).get("lang") === "sl" ? "sl" : "en";
   let theme = "dark";
   function updateScreenshot() {
-    const source = `images/session-${theme}.png`;
+    const source = `images/apollo-${theme}.png`;
     const alt =
       language === "sl"
-        ? "Predstavitvena seja Apollo TUI z odgovorom kode, kontekstom, nalogami in spremenjenimi datotekami"
-        : "Apollo TUI demonstration session with a code reply, context usage, tasks, and modified files";
+        ? "Dejanski posnetek Apollo TUI 1.0.0 v iTermu: branje projektnih datotek in navodila za namestitev"
+        : "Actual screenshot of Apollo TUI 1.0.0 in iTerm, showing project file reads and setup instructions";
     image.src = source;
     dialogImage.src = source;
     image.alt = alt;
