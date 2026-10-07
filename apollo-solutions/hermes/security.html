@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Dental — Podatki in varnost</title>
+  <meta name="description" content="Kako Hermes Dental hrani lokalne podatke, šifrira varnostne kopije in uporablja povezane storitve." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="pricing.html">Cenik</a>
+        <a href="security.html" style="color: var(--eu-blue); font-weight:600">Varnost</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-navy" href="index.html">Domov</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="hero-copy" style="max-width: 720px">
+        <p class="kicker">Podatki in varnost</p>
+        <h1>Jasno o tem, kje so vaši podatki.</h1>
+        <p class="lede">
+          Pri lokalni namestitvi Hermes hrani podatke ordinacije v datoteki SQLite na Macu.
+          Varnostne kopije so šifrirane. Če vključite povezane storitve ali oddaljen model AI,
+          je treba za vsako povezavo posebej preveriti, katere podatke prejme in kje jih obdeluje.
+        </p>
+        <div class="meta-row">
+          <span class="pill pill-green">Lokalna baza SQLite</span>
+          <span class="pill pill-green">Šifrirane varnostne kopije</span>
+          <span class="pill">Povezave po izbiri</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="card-grid">
+          <div class="card">
+            <h3>Lokalna baza</h3>
+            <p>Pri namestitvi za Mac so podatki v standardni datoteki SQLite. Aplikacija te datoteke sama ne šifrira; zaščita naprave in diska je zato pomemben del postavitve.</p>
+          </div>
+          <div class="card">
+            <h3>Varnostne kopije</h3>
+            <p>Hermes podpira varnostne kopije, šifrirane z AES-256-GCM. Za ustvarjanje kopije je potreben nastavljen šifrirni ključ ali geslo. Mesto hrambe je odvisno od izbrane postavitve.</p>
+          </div>
+          <div class="card">
+            <h3>Prijava osebja</h3>
+            <p>Gesla niso shranjena v čitljivi obliki. Lokalna prijava osebja uporablja bcrypt, gostovana prijava pa Argon2id.</p>
+          </div>
+          <div class="card">
+            <h3>Revizijska sled</h3>
+            <p>Aplikacija beleži podprte občutljive dogodke in dejanja pomočnika v revizijsko sled. Obseg beleženja je odvisen od vrste dejanja in uporabljene različice.</p>
+          </div>
+          <div class="card">
+            <h3>Povezane storitve</h3>
+            <p>Lokalna aplikacija lahko uporablja oddaljene storitve za AI, sporočila ali varnostne kopije. Pred vklopom preverite ponudnika, dovoljenja in lokacijo obdelave podatkov.</p>
+          </div>
+          <div class="card">
+            <h3>Odgovornosti pri uvedbi</h3>
+            <p>Pred uporabo z resničnimi podatki se je treba dogovoriti o dostopu osebja, varnostnih kopijah, povezanih storitvah in postopku ob izgubi ali okvari naprave.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" style="margin-top: 40px">
+      <p>Za vprašanja o varnosti in obdelavi podatkov se obrnite na javni kontakt, naveden na strani za povpraševanja.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© 2026 Hermes Dental</span>
+      <a href="privacy.html">Zasebnost</a>
+      <a href="terms.html">Pogoji</a>
+      <a href="pricing.html">Povpraševanje</a>
+      <span class="pill pill-amber">Narejeno v Sloveniji</span>
+    </div>
+  </footer>
+
+</body>
+</html>

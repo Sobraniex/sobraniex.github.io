@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Apollo TUI — AI development in your terminal | Apollo Solutions
+    </title>
+    <meta
+      name="description"
+      content="Meet Apollo TUI: a focused terminal workspace for AI-assisted development. Choose a model, work with your code, and keep every step in view."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Apollo TUI — Build in your terminal." />
+    <meta
+      property="og:description"
+      content="Your project, your model, your next move. Explore Apollo's terminal workspace for AI-assisted development."
+    />
+    <meta
+      property="og:url"
+      content="https://sobraniex.github.io/apollo-solutions/apollo-tui/"
+    />
+    <meta
+      property="og:image"
+      content="https://sobraniex.github.io/apollo-solutions/apollo-tui/images/session-dark.png"
+    />
+    <meta name="theme-color" content="#0d0b12" />
+    <link
+      rel="canonical"
+      href="https://sobraniex.github.io/apollo-solutions/apollo-tui/"
+    />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main"
+      data-en="Skip to content"
+      data-sl="Preskoči na vsebino"
+      >Skip to content</a
+    >
+    <header class="site-header">
+      <a class="brand home-link" href="../" aria-label="Apollo Solutions home"
+        ><img
+          src="../images/apollo-mark.svg"
+          width="36"
+          height="36"
+          alt=""
+        /><span>Apollo <span>Solutions</span></span></a
+      >
+      <nav aria-label="Product navigation">
+        <a href="#workflow" data-en="How it works" data-sl="Kako deluje"
+          >How it works</a
+        ><a href="#questions" data-en="Questions" data-sl="Vprašanja"
+          >Questions</a
+        ><a href="https://github.com/Sobraniex/APOLLO-TUI"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+      <button
+        class="language"
+        id="langBtn"
+        type="button"
+        aria-label="Switch to Slovenian"
+      >
+        SL
+      </button>
+    </header>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-topline">
+          <p class="eyebrow">
+            <span class="signal" aria-hidden="true"></span>APOLLO TUI
+            <span class="version">1.0.0</span>
+          </p>
+          <a
+            class="home-link quiet-link"
+            href="../#apollo-products"
+            data-en="An Apollo product ↗"
+            data-sl="Apollov izdelek ↗"
+            >An Apollo product ↗</a
+          >
+        </div>
+        <div class="hero-grid">
+          <div>
+            <h1 id="hero-title">
+              <span data-en="Build in" data-sl="Razvijajte v">Build in</span
+              ><br /><em data-en="your terminal." data-sl="svojem terminalu."
+                >your terminal.</em
+              >
+            </h1>
+            <p
+              class="hero-copy"
+              data-en="Your project. Your model. Your next move. A focused workspace for AI-assisted development, right where you already work."
+              data-sl="Vaš projekt. Vaš model. Vaš naslednji korak. Osredotočen prostor za razvoj s pomočjo AI, tam, kjer že delate."
+            >
+              Your project. Your model. Your next move. A focused workspace for
+              AI-assisted development, right where you already work.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button primary"
+                href="https://github.com/Sobraniex/APOLLO-TUI/releases/latest"
+                ><span data-en="Get Apollo TUI" data-sl="Prenesite Apollo TUI"
+                  >Get Apollo TUI</span
+                ><span aria-hidden="true">↗</span></a
+              ><a class="text-link" href="#workspace"
+                ><span data-en="See the workspace" data-sl="Oglejte si vmesnik"
+                  >See the workspace</span
+                ><span aria-hidden="true">↓</span></a
+              >
+            </div>
+            <p
+              class="platform-note"
+              data-en="macOS · Apple silicon · Open source"
+              data-sl="macOS · Apple silicon · Odprta koda"
+            >
+              macOS · Apple silicon · Open source
+            </p>
+          </div>
+          <aside class="launch-card" aria-label="Launch command">
+            <div class="launch-orbit" aria-hidden="true">
+              <svg viewBox="0 0 240 240">
+                <ellipse
+                  cx="120"
+                  cy="120"
+                  rx="102"
+                  ry="57"
+                  transform="rotate(-32 120 120)"
+                />
+                <ellipse
+                  cx="120"
+                  cy="120"
+                  rx="57"
+                  ry="102"
+                  transform="rotate(-32 120 120)"
+                />
+                <circle cx="120" cy="120" r="36" />
+                <circle class="orbit-point" cx="201" cy="66" r="5" />
+                <path d="m109 106 15 14-15 14m22 0h17" />
+              </svg>
+            </div>
+            <div class="launch-label">
+              <span
+                data-en="Start where you are"
+                data-sl="Začnite tam, kjer ste"
+                >Start where you are</span
+              ><span aria-hidden="true">⌘</span>
+            </div>
+            <div class="command">
+              <span class="prompt-symbol" aria-hidden="true">$</span
+              ><code id="launchCommand">apollo</code
+              ><button
+                type="button"
+                id="copyCommand"
+                aria-label="Copy launch command"
+                data-en="Copy"
+                data-sl="Kopiraj"
+              >
+                Copy
+              </button>
+            </div>
+            <p
+              data-en="Open your project. Launch Apollo. Describe what comes next."
+              data-sl="Odprite projekt. Zaženite Apollo. Opišite naslednji korak."
+            >
+              Open your project. Launch Apollo. Describe what comes next.
+            </p>
+            <p
+              class="copy-status"
+              id="copyStatus"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </aside>
+        </div>
+      </section>
+
+      <section
+        class="workspace wrap"
+        id="workspace"
+        aria-label="Apollo terminal interface"
+      >
+        <div class="workspace-bar">
+          <div>
+            <span class="window-dots" aria-hidden="true"
+              ><i></i><i></i><i></i></span
+            ><span class="mono">apollo / workspace</span>
+          </div>
+          <div class="theme-switch" role="group" aria-label="Screenshot theme">
+            <button
+              type="button"
+              data-theme="dark"
+              aria-pressed="true"
+              data-en="Dark"
+              data-sl="Temna"
+            >
+              Dark</button
+            ><button
+              type="button"
+              data-theme="light"
+              aria-pressed="false"
+              data-en="Light"
+              data-sl="Svetla"
+            >
+              Light
+            </button>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="screen-button"
+          id="expandScreen"
+          aria-label="Enlarge Apollo screenshot"
+        >
+          <img
+            id="workspaceImage"
+            src="images/session-dark.png"
+            width="1544"
+            height="896"
+            alt="Apollo TUI demonstration session with a code reply, context usage, tasks, and modified files"
+            fetchpriority="high"
+          /><span
+            class="enlarge-label"
+            data-en="Open full size ↗"
+            data-sl="Odpri v polni velikosti ↗"
+            >Open full size ↗</span
+          >
+        </button>
+        <div class="workspace-caption">
+          <span
+            data-en="A clear view of the work, from conversation to changes."
+            data-sl="Jasen pregled dela, od pogovora do sprememb."
+            >A clear view of the work, from conversation to changes.</span
+          ><span data-en="Demonstration session" data-sl="Predstavitvena seja"
+            >Demonstration session</span
+          >
+        </div>
+      </section>
+
+      <section class="capabilities wrap" aria-labelledby="capabilities-title">
+        <div class="section-heading">
+          <p
+            class="eyebrow"
+            data-en="Less switching. More doing."
+            data-sl="Manj preklapljanja. Več dela."
+          >
+            Less switching. More doing.
+          </p>
+          <h2
+            id="capabilities-title"
+            data-en="One workspace. A clear trail."
+            data-sl="En delovni prostor. Jasen potek."
+          >
+            One workspace. A clear trail.
+          </h2>
+        </div>
+        <div class="capability-grid">
+          <article>
+            <span class="feature-symbol" aria-hidden="true">~/</span>
+            <h3 data-en="Rooted in your project" data-sl="V vašem projektu">
+              Rooted in your project
+            </h3>
+            <p
+              data-en="Read files, search the codebase, make edits, and run project commands without leaving the conversation."
+              data-sl="Berite datoteke, iščite po kodi, urejajte in izvajajte ukaze, ne da bi zapustili pogovor."
+            >
+              Read files, search the codebase, make edits, and run project
+              commands without leaving the conversation.
+            </p>
+          </article>
+          <article>
+            <span class="feature-symbol" aria-hidden="true">⇄</span>
+            <h3 data-en="Your choice of model" data-sl="Vaša izbira modela">
+              Your choice of model
+            </h3>
+            <p
+              data-en="Connect a supported provider and choose the model for the task. Apollo is the workspace; you choose what powers it."
+              data-sl="Povežite podprtega ponudnika in izberite model za nalogo. Apollo je delovni prostor; vi izberete, kaj ga poganja."
+            >
+              Connect a supported provider and choose the model for the task.
+              Apollo is the workspace; you choose what powers it.
+            </p>
+          </article>
+          <article>
+            <span class="feature-symbol" aria-hidden="true">[ ]</span>
+            <h3
+              data-en="The details stay visible"
+              data-sl="Podrobnosti ostanejo vidne"
+            >
+              The details stay visible
+            </h3>
+            <p
+              data-en="Context usage, task progress, connected tools, and changed files sit beside the work. A quiet sidebar keeps the essentials close."
+              data-sl="Poraba konteksta, napredek nalog, povezana orodja in spremenjene datoteke so ob delu. Mirna stranska vrstica ohranja bistvo pri roki."
+            >
+              Context usage, task progress, connected tools, and changed files
+              sit beside the work. A quiet sidebar keeps the essentials close.
+            </p>
+          </article>
+          <article>
+            <span class="feature-symbol" aria-hidden="true">↳</span>
+            <h3 data-en="Room to continue" data-sl="Prostor za nadaljevanje">
+              Room to continue
+            </h3>
+            <p
+              data-en="Move between Build and Plan, resume a session, and connect MCP tools or language servers when your workflow needs them."
+              data-sl="Preklapljajte med Build in Plan, nadaljujte sejo ter po potrebi povežite orodja MCP ali jezikovne strežnike."
+            >
+              Move between Build and Plan, resume a session, and connect MCP
+              tools or language servers when your workflow needs them.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="workflow-section"
+        id="workflow"
+        aria-labelledby="workflow-title"
+      >
+        <div class="wrap">
+          <div class="workflow-heading">
+            <div>
+              <p
+                class="eyebrow"
+                data-en="From intent to a reviewed change"
+                data-sl="Od zamisli do pregledane spremembe"
+              >
+                From intent to a reviewed change
+              </p>
+              <h2 id="workflow-title">
+                <span data-en="Bring a task." data-sl="Prinesite nalogo."
+                  >Bring a task.</span
+                ><br /><em
+                  data-en="Keep the thread."
+                  data-sl="Ohranite rdečo nit."
+                  >Keep the thread.</em
+                >
+              </h2>
+            </div>
+            <p
+              data-en="Apollo brings a model and your project tools into the same conversation. Each step leaves something you can inspect: a reply, a command result, or a change to your files."
+              data-sl="Apollo združi model in projektna orodja v enem pogovoru. Vsak korak pusti nekaj, kar lahko pregledate: odgovor, rezultat ukaza ali spremembo datotek."
+            >
+              Apollo brings a model and your project tools into the same
+              conversation. Each step leaves something you can inspect: a reply,
+              a command result, or a change to your files.
+            </p>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">01</span>
+              <h3 data-en="Open your project" data-sl="Odprite projekt">
+                Open your project
+              </h3>
+              <p
+                data-en="Launch Apollo in your working directory. Connect a provider and choose a model."
+                data-sl="Zaženite Apollo v delovni mapi. Povežite ponudnika in izberite model."
+              >
+                Launch Apollo in your working directory. Connect a provider and
+                choose a model.
+              </p>
+              <code>cd your-project<br />apollo</code>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <h3 data-en="Describe the change" data-sl="Opišite spremembo">
+                Describe the change
+              </h3>
+              <p
+                data-en="Ask a question, plan a feature, or describe a fix. The agent works with the available project context."
+                data-sl="Postavite vprašanje, načrtujte funkcijo ali opišite popravek. Agent uporabi razpoložljivi kontekst projekta."
+              >
+                Ask a question, plan a feature, or describe a fix. The agent
+                works with the available project context.
+              </p>
+              <span
+                class="task-example"
+                data-en="“Explain this flow, then improve it.”"
+                data-sl="»Pojasni ta potek in ga nato izboljšaj.«"
+                >“Explain this flow, then improve it.”</span
+              >
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <h3 data-en="Review what happens" data-sl="Preglejte rezultate">
+                Review what happens
+              </h3>
+              <p
+                data-en="Inspect replies, edits, and command output. Permission rules govern actions; review the result and steer the next step."
+                data-sl="Preglejte odgovore, spremembe in izpise ukazov. Dejanja urejajo pravila dovoljenj; preverite rezultat in usmerite naslednji korak."
+              >
+                Inspect replies, edits, and command output. Permission rules
+                govern actions; review the result and steer the next step.
+              </p>
+              <span class="review-example"
+                ><span>+32</span><span>−8</span
+                ><span data-en="Changes in view" data-sl="Spremembe na očeh"
+                  >Changes in view</span
+                ></span
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="get-started wrap"
+        id="start"
+        aria-labelledby="start-title"
+      >
+        <div>
+          <p
+            class="eyebrow"
+            data-en="Ready for your next project"
+            data-sl="Pripravljen za vaš naslednji projekt"
+          >
+            Ready for your next project
+          </p>
+          <h2
+            id="start-title"
+            data-en="Make yourself at home."
+            data-sl="Počutite se kot doma."
+          >
+            Make yourself at home.
+          </h2>
+          <p
+            data-en="Start with the macOS release, or explore the source. Then connect a model and put your first task in motion."
+            data-sl="Začnite z izdajo za macOS ali raziščite izvorno kodo. Nato povežite model in se lotite prve naloge."
+          >
+            Start with the macOS release, or explore the source. Then connect a
+            model and put your first task in motion.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="https://github.com/Sobraniex/APOLLO-TUI/releases/latest"
+              ><span
+                data-en="Download for Apple silicon"
+                data-sl="Prenesite za Apple silicon"
+                >Download for Apple silicon</span
+              ><span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="https://github.com/Sobraniex/APOLLO-TUI"
+              ><span data-en="Browse the source" data-sl="Oglejte si kodo"
+                >Browse the source</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <p
+            class="release-note"
+            data-en="v1.0.0 · Ad-hoc signed macOS binary; not notarized. Other platforms: build from source. Provider API charges, if any, are separate."
+            data-sl="v1.0.0 · Binarna datoteka za macOS je podpisana ad hoc, brez notarizacije. Druge platforme: gradnja iz kode. Morebitni stroški API ponudnika so ločeni."
+          >
+            v1.0.0 · Ad-hoc signed macOS binary; not notarized. Other platforms:
+            build from source. Provider API charges, if any, are separate.
+          </p>
+        </div>
+        <div class="setup-card">
+          <div class="setup-label">
+            <span class="signal" aria-hidden="true"></span
+            ><span data-en="Your first session" data-sl="Vaša prva seja"
+              >Your first session</span
+            >
+          </div>
+          <ol>
+            <li>
+              <span
+                data-en="Install the release using the README."
+                data-sl="Namestite izdajo po navodilih v README."
+                >Install the release using the README.</span
+              >
+            </li>
+            <li>
+              <span
+                data-en="Launch Apollo in your project folder."
+                data-sl="Zaženite Apollo v mapi projekta."
+                >Launch Apollo in your project folder.</span
+              >
+            </li>
+            <li>
+              <span
+                ><code>/connect</code>
+                <span
+                  data-en="to configure your provider."
+                  data-sl="za nastavitev ponudnika."
+                  >to configure your provider.</span
+                ></span
+              >
+            </li>
+            <li>
+              <span
+                data-en="Choose a model and describe a task."
+                data-sl="Izberite model in opišite nalogo."
+                >Choose a model and describe a task.</span
+              >
+            </li>
+          </ol>
+          <a
+            class="setup-docs"
+            href="https://github.com/Sobraniex/APOLLO-TUI#download-and-run"
+            ><span
+              data-en="Read the setup guide"
+              data-sl="Preberite navodila za nastavitev"
+              >Read the setup guide</span
+            ><span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+
+      <section
+        class="questions wrap"
+        id="questions"
+        aria-labelledby="questions-title"
+      >
+        <div>
+          <p
+            class="eyebrow"
+            data-en="A little more context"
+            data-sl="Še nekaj konteksta"
+          >
+            A little more context
+          </p>
+          <h2
+            id="questions-title"
+            data-en="Good questions."
+            data-sl="Dobra vprašanja."
+          >
+            Good questions.
+          </h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary data-en="What is Apollo TUI?" data-sl="Kaj je Apollo TUI?">
+              What is Apollo TUI?
+            </summary>
+            <p
+              data-en="A terminal interface for AI-assisted software development. It combines a conversation with project tools, saved sessions, agents, and a sidebar for context, tasks, services, and changes."
+              data-sl="Terminalski vmesnik za razvoj programske opreme s pomočjo AI. Združuje pogovor s projektnimi orodji, shranjenimi sejami, agenti in stransko vrstico za kontekst, naloge, storitve in spremembe."
+            >
+              A terminal interface for AI-assisted software development. It
+              combines a conversation with project tools, saved sessions,
+              agents, and a sidebar for context, tasks, services, and changes.
+            </p>
+          </details>
+          <details>
+            <summary
+              data-en="Is this Apollo 1 or Apollo Agent?"
+              data-sl="Je to Apollo 1 ali Apollo Agent?"
+            >
+              Is this Apollo 1 or Apollo Agent?
+            </summary>
+            <p
+              data-en="Apollo TUI is the terminal product you can download here. Apollo 1 is our language-model project, and Apollo Agent is a separate agent project. Those two are still in development; Apollo TUI works with a provider and model you configure today."
+              data-sl="Apollo TUI je terminalski izdelek, ki ga lahko prenesete tukaj. Apollo 1 je naš projekt jezikovnega modela, Apollo Agent pa ločen projekt agenta. Oba sta še v razvoju; Apollo TUI že danes deluje s ponudnikom in modelom, ki ju nastavite."
+            >
+              Apollo TUI is the terminal product you can download here. Apollo 1
+              is our language-model project, and Apollo Agent is a separate
+              agent project. Those two are still in development; Apollo TUI
+              works with a provider and model you configure today.
+            </p>
+          </details>
+          <details>
+            <summary
+              data-en="Where is my code processed?"
+              data-sl="Kje se obdeluje moja koda?"
+            >
+              Where is my code processed?
+            </summary>
+            <p
+              data-en="That depends on your selected provider and endpoint. Prompts and relevant project context are sent to the model you configure. Choose and review that configuration according to your project's data requirements."
+              data-sl="To je odvisno od izbranega ponudnika in končne točke. Pozivi in ustrezen kontekst projekta se pošljejo modelu, ki ga nastavite. Nastavitve izberite in preverite glede na zahteve projekta za podatke."
+            >
+              That depends on your selected provider and endpoint. Prompts and
+              relevant project context are sent to the model you configure.
+              Choose and review that configuration according to your project's
+              data requirements.
+            </p>
+          </details>
+          <details>
+            <summary
+              data-en="Can it change files and run commands?"
+              data-sl="Lahko spreminja datoteke in izvaja ukaze?"
+            >
+              Can it change files and run commands?
+            </summary>
+            <p
+              data-en="Yes. The agent can use project tools under your configured permission rules. Keep an eye on command output and diffs, and verify changes with your normal review and test workflow."
+              data-sl="Da. Agent lahko uporablja projektna orodja v okviru nastavljenih pravil dovoljenj. Spremljajte izpise ukazov in razlike ter spremembe preverite z običajnim pregledom in testi."
+            >
+              Yes. The agent can use project tools under your configured
+              permission rules. Keep an eye on command output and diffs, and
+              verify changes with your normal review and test workflow.
+            </p>
+          </details>
+          <details>
+            <summary
+              data-en="Which platforms are available?"
+              data-sl="Za katere platforme je na voljo?"
+            >
+              Which platforms are available?
+            </summary>
+            <p
+              data-en="The first packaged and checked release is macOS on Apple silicon. The repository includes native build targets for other platforms, but their packaged availability and checks will be listed in future release notes."
+              data-sl="Prva zapakirana in preverjena izdaja je za macOS na Apple silicon. Repozitorij vključuje cilje gradnje za druge platforme; njihovo razpoložljivost in preverjanje bomo navedli v opombah prihodnjih izdaj."
+            >
+              The first packaged and checked release is macOS on Apple silicon.
+              The repository includes native build targets for other platforms,
+              but their packaged availability and checks will be listed in
+              future release notes.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <a class="home-link footer-brand" href="../"
+        >Apollo Solutions<span aria-hidden="true">✦</span></a
+      >
+      <p data-en="Made for the work ahead." data-sl="Za delo, ki je pred nami.">
+        Made for the work ahead.
+      </p>
+      <a
+        href="https://github.com/Sobraniex/APOLLO-TUI"
+        data-en="Open source on GitHub ↗"
+        data-sl="Odprta koda na GitHubu ↗"
+        >Open source on GitHub ↗</a
+      >
+    </footer>
+    <dialog id="screenshotDialog" aria-labelledby="dialogTitle">
+      <div class="dialog-bar">
+        <span
+          id="dialogTitle"
+          data-en="Apollo TUI · demonstration session"
+          data-sl="Apollo TUI · predstavitvena seja"
+          >Apollo TUI · demonstration session</span
+        ><button id="closeDialog" type="button" aria-label="Close screenshot">
+          ×
+        </button>
+      </div>
+      <img
+        id="dialogImage"
+        src="images/session-dark.png"
+        width="1544"
+        height="896"
+        alt="Apollo TUI demonstration session"
+      />
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+.apollo-tui-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: center;
+  gap: 46px;
+  margin-top: 22px;
+  padding: 32px;
+  border: 1px solid #cbb4ff4d;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 100% 100%, #7750a51a, transparent 65%), #18141f;
+}
+.tui-feature-copy {
+  min-width: 0;
+}
+.tui-feature-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 31px;
+  font-size: 10px;
+  color: #baaaca;
+  letter-spacing: 0.13em;
+}
+.tui-feature-top > span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8ce3c0;
+  letter-spacing: 0;
+}
+.tui-feature-top i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #63d9ad;
+}
+.apollo-tui-feature h3 {
+  font-size: clamp(38px, 4.2vw, 56px);
+}
+.apollo-tui-feature h3 em {
+  font-style: normal;
+  color: #cbb4ff;
+}
+.tui-feature-copy > p {
+  margin-top: 17px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c6b9d1;
+}
+.tui-feature-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 19px;
+  margin-top: 25px;
+}
+.tui-feature-actions .button {
+  font-size: 12px;
+  padding: 12px 17px;
+}
+.tui-feature-actions .text-link {
+  font-size: 12px;
+}
+.tui-feature-platform {
+  display: block;
+  color: #a59bb5;
+  margin-top: 18px;
+  font-size: 10px;
+}
+.tui-feature-screen {
+  display: block;
+  min-width: 0;
+  border: 1px solid #cbb4ff33;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #0d0b12;
+  box-shadow: 0 15px 40px #0003;
+}
+.tui-feature-window {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 11px 13px;
+  border-bottom: 1px solid #cbb4ff1f;
+  font:
+    9px ui-monospace,
+    monospace;
+  color: #a59bb5;
+}
+.tui-feature-window > span:first-child {
+  color: #806992;
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+.tui-feature-screen img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .apollo-tui-feature {
+    gap: 29px;
+    padding: 25px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tui-feature-top {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .apollo-tui-feature {
+    grid-template-columns: 1fr;
+    padding: 23px;
+    gap: 28px;
+  }
+  .apollo-tui-feature h3 {
+    font-size: 42px;
+  }
+}
